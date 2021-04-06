@@ -20,7 +20,7 @@ div.logo {
     color: #bcc3c7;
 }
 
-ul.nav-links {
+.nav-links {
     display: flex;
     margin: 0;
     padding: 0;
@@ -43,6 +43,23 @@ ul li a:hover {
     background: #fff;
     padding: 0.5rem;
 }
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
 
 @media screen and (max-width: 768px) {
     div.nav-bar {
@@ -54,17 +71,26 @@ ul li a:hover {
     }
 }
 @media screen and (max-width: 425px) {
+    .toggle-button {
+        display: flex;
+    }
+    ul li a:hover {
+        padding: .5rem 10.7rem;
+    }
     div.nav-bar {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
-    ul.nav-links {
+    .nav-links {
+        display: none;
+        width: 100%;
         flex-direction: column;
         align-items: center;
     }
+    .nav-links.active {
+        display: flex;
+    }
     ul li {
-        margin: .8em;
+        margin: .5rem;
     }
 }
 
